@@ -1,4 +1,4 @@
-import arcjet, {shield, detectBot, tokenBucket} from "@arcjet/node";
+import arcjet, { shield, detectBot, tokenBucket } from "@arcjet/node";
 import { ARCJET_KEY } from "../config/env.js";
 
 const aj = arcjet({
@@ -11,7 +11,10 @@ const aj = arcjet({
       mode: "LIVE", // Blocks requests. Use "DRY_RUN" to log only
       // Block all bots except the following
       allow: [
-        "CATEGORY:SEARCH_ENGINE", "POSTMAN" // Google, Bing, etc
+        "CATEGORY:SEARCH_ENGINE",
+        "POSTMAN",
+        "CATEGORY:PREVIEW",
+        // Google, Bing, etc
         // Uncomment to allow these other common bot categories
         // See the full list at https://arcjet.com/bot-list
         //"CATEGORY:MONITOR", // Uptime monitoring services
@@ -20,7 +23,7 @@ const aj = arcjet({
     }),
     // Create a token bucket rate limit. Other algorithms are supported.
     tokenBucket({
-      mode: "LIVE",
+      mode: "DRY_RUN",
       // Tracked by IP address by default, but this can be customized
       // See https://docs.arcjet.com/fingerprints
       //characteristics: ["ip.src"],
