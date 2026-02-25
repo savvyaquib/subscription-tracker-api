@@ -1,13 +1,8 @@
 import aj from "../config/arcjet.js";
-import { NODE_ENV } from "../config/env.js";
 
 const arcjetMiddleware = async (req, res, next) => {
-  // Skip Arcjet in development so browsers aren't blocked
-
-  if (NODE_ENV === "development") return next();
-
   try {
-    const decision = await aj.protect(req, { requested: 2 });
+    const decision = await aj.protect(req, {requested: 2});
 
     if (decision.isDenied()) {
       if (decision.reason.isRateLimit())

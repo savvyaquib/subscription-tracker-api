@@ -3,7 +3,7 @@ import { config } from "dotenv";
 // config({ path: `.env.${process.env.NODE_ENV || "development"}.local` });
 
 const env = process.env.NODE_ENV || "development";
-config({ path: `.env.${env}.local` });  
+config({ path: `.env.${env}.local` });
 
 export const {
   PORT,
