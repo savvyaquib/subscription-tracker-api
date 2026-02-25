@@ -14,6 +14,7 @@ const aj = arcjet({
         "CATEGORY:SEARCH_ENGINE",
         "POSTMAN",
         "CATEGORY:PREVIEW",
+        "CATEGORY:MONITOR",
         // Google, Bing, etc
         // Uncomment to allow these other common bot categories
         // See the full list at https://arcjet.com/bot-list
